@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
 
 class AddTodo extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { input: "" };
+    this.state = { input: '' };
   }
 
   updateInput = input => {

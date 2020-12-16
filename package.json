@@ -5,16 +5,33 @@
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
+    "@reduxjs/toolkit": "^1.5.0",
     "classnames": "2.2.6",
-    "react": "16.4.2",
-    "react-dom": "16.4.2",
+    "react": "^16.8.3",
+    "react-dom": "^16.8.3",
+    "react-redux": "^7.2.2",
     "react-scripts": "1.1.4"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "eslint": "7.14.0",
+    "eslint-config-airbnb": "18.1.x",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "6.2.x",
+    "eslint-plugin-react": "7.20.x",
+    "eslint-plugin-react-hooks": "2.5.x"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "eslint-f": "npx eslint . --fix",
+    "stylelint-f": "npx stylelint **/*.{css,scss} --fix"
   }
 }
