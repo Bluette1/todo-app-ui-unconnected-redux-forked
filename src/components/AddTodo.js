@@ -1,6 +1,7 @@
 import React from 'react';
-import { connect } from 'react-redux'
-import { addTodo } from '../redux/actions'
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { addTodo } from '../redux/actions';
 
 class AddTodo extends React.Component {
   constructor(props) {
@@ -14,19 +15,22 @@ class AddTodo extends React.Component {
 
   handleAddTodo = () => {
     // dispatches actions to add todo
-    this.props.addTodo(this.state.input);
+    const { props: { addTodo } } = this;
+    const { state: { input } } = this;
+    addTodo(input);
     // sets state back to empty string
     this.setState({ input: '' });
   };
 
   render() {
+    const { state: { input } } = this;
     return (
       <div>
         <input
           onChange={e => this.updateInput(e.target.value)}
-          value={this.state.input}
+          value={input}
         />
-        <button className="add-todo" onClick={this.handleAddTodo}>
+        <button type="button" className="add-todo" onClick={this.handleAddTodo}>
           Add Todo
         </button>
       </div>
@@ -34,7 +38,11 @@ class AddTodo extends React.Component {
   }
 }
 
+AddTodo.propTypes = {
+  addTodo: PropTypes.func.isRequired,
+};
+
 export default connect(
   null,
-  { addTodo }
+  { addTodo },
 )(AddTodo);
