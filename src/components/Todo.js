@@ -8,7 +8,7 @@ import { toggleTodo } from "../redux/actions";
       const todo = this.props.todo;
       return (<li
       className="todo-his.props.todoitem"
-      onClick={() => this.props.toggleTodo(todo.id)/** dispatches action to toggle todo */}
+      onClick={() => this.props.toggleTodo(todo.id)}
     >
       {todo && todo.completed ? '👌' : '👋'}
       {' '}
