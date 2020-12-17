@@ -4,9 +4,6 @@ import { connect } from "react-redux";
 import { toggleTodo } from "../redux/actions";
 
   class Todo extends React.Component {
-    constructor(props) {
-      super(props);
-    }
     render() {
       const todo = this.props.todo;
       return (<li
